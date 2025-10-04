@@ -9,16 +9,16 @@ def index():
 
 # Rotas dos Alunos
 @bp.route('/alunos', methods=['GET'])
-def get_all_alunos():                               # Pega todos os Alunos
+def get_all_aluno():                               # Pega todos os Alunos
     return AlunoController.get_all_aluno()
 
 @bp.route('/alunos/<int:id>', methods=['GET'])
 def get_aluno_id(id):                                 # Pega um aluno em específico pelo id
-    return AlunoController.get_alunoes_by_id(id)
+    return AlunoController.get_aluno_by_id(id)
 
 @bp.route('/alunos', methods=['POST'])
 def create_a_new_aluno():                           # Registra um novo aluno
-    return AlunoController.create_Aluno()
+    return AlunoController.create_aluno()
 
 @bp.route('/alunos/<int:id>', methods=['PUT'])
 def update_a_aluno(id):                           # Atualiza a informação do aluno
@@ -41,7 +41,7 @@ def get_professor_id(id):                                 # Pega um professor em
 
 @bp.route('/professores', methods=['POST'])
 def create_a_new_professor():                           # Registra um novo professor
-    return ProfessorController.create_Professor()
+    return ProfessorController.create_professor()
 
 @bp.route('/professores/<int:id>', methods=['PUT'])
 def update_a_professor(id):                           # Atualiza a informação do professor
@@ -64,7 +64,7 @@ def get_turma_id(id):                                 # Pega uma turma em espec�
 
 @bp.route('/turmas', methods=['POST'])
 def create_a_new_turma():                           # Registra uma nova turma
-    return TurmaController.create_Turma()
+    return TurmaController.create_turma()
 
 @bp.route('/turmas/<int:id>', methods=['PUT'])
 def update_a_turma(id):                           # Atualiza a informação da turma
