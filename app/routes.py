@@ -118,7 +118,7 @@ def create_aluno():
       400:
         description: Dados inválidos (ex: nome faltando).
     """
-    return AlunoController.create_aluno() 
+    return AlunoController.create_Aluno() 
 
 @bp.route('/alunos/<int:id>', methods=['PUT'])
 def update_a_aluno(id):
@@ -152,7 +152,7 @@ def update_a_aluno(id):
       404:
         description: Aluno não encontrado.
     """
-    return AlunoController.update_aluno(id) 
+    return AlunoController.update_Aluno(id) 
 
 @bp.route('/alunos/<int:id>', methods=['DELETE'])
 def delete_a_aluno(id):
@@ -174,7 +174,7 @@ def delete_a_aluno(id):
       404:
         description: Aluno não encontrado.
     """
-    return AlunoController.delete_aluno(id) 
+    return AlunoController.delete_Aluno(id) 
 
 # ========================================================================================
 # Rotas dos Professores
@@ -263,7 +263,7 @@ def create_a_new_professor():
       400:
         description: Dados inválidos.
     """
-    return ProfessorController.create_professor() 
+    return ProfessorController.create_Professor() 
 
 @bp.route('/professores/<int:id>', methods=['PUT'])
 def update_a_professor(id):
@@ -299,7 +299,7 @@ def update_a_professor(id):
       404:
         description: Professor não encontrado.
     """
-    return ProfessorController.update_professor(id) 
+    return ProfessorController.update_Professor(id) 
 
 @bp.route('/professores/<int:id>', methods=['DELETE'])
 def delete_a_professor(id):
@@ -321,7 +321,7 @@ def delete_a_professor(id):
       404:
         description: Professor não encontrado.
     """
-    return ProfessorController.delete_professor(id) 
+    return ProfessorController.delete_Professor(id) 
 
 # ========================================================================================
 # Rotas das Turmas
@@ -406,7 +406,7 @@ def create_a_new_turma():
       400:
         description: Dados inválidos.
     """
-    return TurmaController.create_turma() 
+    return TurmaController.create_Turma() 
 
 @bp.route('/turmas/<int:id>', methods=['PUT'])
 def update_a_turma(id):
@@ -440,7 +440,7 @@ def update_a_turma(id):
       404:
         description: Turma não encontrada.
     """
-    return TurmaController.update_turma(id) 
+    return TurmaController.update_Turma(id) 
 
 @bp.route('/turmas/<int:id>', methods=['DELETE'])
 def delete_a_turma(id):
@@ -462,4 +462,4 @@ def delete_a_turma(id):
       404:
         description: Turma não encontrada.
     """
-    return TurmaController.delete_turma(id) 
+    return TurmaController.delete_Turma(id) 
