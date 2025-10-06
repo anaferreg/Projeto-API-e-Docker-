@@ -7,6 +7,7 @@ Instruções para execução do projeto:
     python -m venv venv
 
     .\venv\Scripts\Activate --> Windows
+    
     source venv/bin/activate --> Linux
 
     deactivate --> Desativa o ambiente
