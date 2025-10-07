@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from controllers import AlunoController, ProfessorController, TurmaController
+from .controllers import AlunoController, ProfessorController, TurmaController
 
 bp = Blueprint('main', __name__)
 

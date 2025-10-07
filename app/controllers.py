@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from models import Aluno, Professor, Turma
+from .models import Aluno, Professor, Turma
 from app import db
 
 

@@ -1,7 +1,7 @@
-# models.py
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+
 
 class Professor(db.Model):
     __tablename__ = "professores"
@@ -12,8 +12,17 @@ class Professor(db.Model):
     materia = db.Column(db.String(100), nullable=False)
     observacoes = db.Column(db.Text)
 
-    # Relacionamento 1:N → Professor → Turmas
     turmas = db.relationship("Turma", back_populates="professor")
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "nome": self.nome,
+            "idade": self.idade,
+            "materia": self.materia,
+            "observacoes": self.observacoes,
+            "turmas": [turma.id for turma in self.turmas]  
+        }
 
 
 class Turma(db.Model):
@@ -27,6 +36,15 @@ class Turma(db.Model):
     # Ligações
     professor = db.relationship("Professor", back_populates="turmas")
     alunos = db.relationship("Aluno", back_populates="turma")
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "descricao": self.descricao,
+            "professor_id": self.professor_id,
+            "ativo": self.ativo,
+            "alunos": [aluno.id for aluno in self.alunos]  
+        }
 
 
 class Aluno(db.Model):
@@ -43,3 +61,15 @@ class Aluno(db.Model):
 
     # Ligações
     turma = db.relationship("Turma", back_populates="alunos")
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "nome": self.nome,
+            "idade": self.idade,
+            "turma_id": self.turma_id,
+            "data_nascimento": self.data_nascimento.isoformat() if self.data_nascimento else None,
+            "nota_primeiro_semestre": self.nota_primeiro_semestre,
+            "nota_segundo_semestre": self.nota_segundo_semestre,
+            "media_final": self.media_final
+        }
