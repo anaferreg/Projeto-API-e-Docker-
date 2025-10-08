@@ -1,12 +1,13 @@
 from flask import Flask
-from .models import db
-from .routes import bp
 from flasgger import Swagger
+from .models import db
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///escola.db' 
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///escola.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.init_app(app)
 
     app.config['SWAGGER'] = {
         'title': 'API Escola',
@@ -15,8 +16,9 @@ def create_app():
         'description': 'Uma API para gerenciar Alunos, Professores e Turmas.'
     }
 
-    swagger = Swagger(app)
+    swagger = Swagger(app, parse=False)
 
-    app.register_blueprint(bp) 
-    
-    return app 
+    from .routes import bp
+    app.register_blueprint(bp)
+
+    return app

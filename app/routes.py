@@ -116,7 +116,7 @@ def create_aluno():
       201:
         description: Aluno criado com sucesso.
       400:
-        description: Dados inválidos (ex: nome faltando).
+        description: "Dados inválidos (ex: nome faltando)."
     """
     return AlunoController.create_Aluno() 
 
@@ -170,7 +170,7 @@ def delete_a_aluno(id):
         description: O ID do aluno a ser deletado.
     responses:
       204:
-        description: Aluno deletado com sucesso (sem conteúdo de retorno).
+        description: "Aluno deletado com sucesso (sem conteúdo de retorno)."
       404:
         description: Aluno não encontrado.
     """
@@ -317,7 +317,7 @@ def delete_a_professor(id):
         description: O ID do professor a ser deletado.
     responses:
       204:
-        description: Professor deletado com sucesso (sem conteúdo de retorno).
+        description: "Professor deletado com sucesso (sem conteúdo de retorno)."
       404:
         description: Professor não encontrado.
     """
@@ -458,7 +458,7 @@ def delete_a_turma(id):
         description: O ID da turma a ser deletada.
     responses:
       204:
-        description: Turma deletada com sucesso (sem conteúdo de retorno).
+        description: "Turma deletada com sucesso (sem conteúdo de retorno)."
       404:
         description: Turma não encontrada.
     """

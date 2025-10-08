@@ -1,7 +1,5 @@
 from flask import request, jsonify
-from .models import Aluno, Professor, Turma
-from app import db
-
+from .models import Aluno, Professor, Turma, db
 
 class AlunoController:
     
