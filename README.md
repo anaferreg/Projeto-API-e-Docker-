@@ -22,7 +22,7 @@ O fluxo típico é:
 
 1. Clone o repositório:
 
-```bash
+"```bash"
 git clone <URL_DO_REPOSITORIO>
 cd api
 
